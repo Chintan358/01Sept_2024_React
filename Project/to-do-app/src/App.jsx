@@ -15,10 +15,16 @@ const App = ()=>{
       settodolist(newArray)
   }
 
+  const deleteItemHandler = (name)=>{
+
+     const Currenttodo =  todolist.filter((element)=>element.name!=name)
+     settodolist(Currenttodo)
+  }
+
   return <center className="todo-container">
     <Title></Title>
     <Addtodo onbuttonclick={addItemHandler}></Addtodo>
-    <Todoitem todoitemlist={todolist}></Todoitem>
+    <Todoitem todoitemlist={todolist} onDeleteButtonClick={deleteItemHandler}></Todoitem>
   </center>
 }
 

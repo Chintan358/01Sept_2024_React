@@ -1,6 +1,6 @@
 
 
-const Item = ({todoname,tododate})=>{
+const Item = ({todoname,tododate,onDeleteButtonClick})=>{
     return <div className="container  mt-3">
     <div className="row">
     <div className="col-4">
@@ -12,7 +12,7 @@ const Item = ({todoname,tododate})=>{
 
     </div>
     <div className="col-4">
-    <span><button className="btn btn-danger">Delete</button></span>
+    <span><button className="btn btn-danger" onClick={()=>onDeleteButtonClick(todoname)}>Delete</button></span>
 
     </div>
     

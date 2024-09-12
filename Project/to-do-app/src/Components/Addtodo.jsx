@@ -27,10 +27,10 @@ const Addtodo = ({onbuttonclick})=>{
     return <div className='container  mt-3'>
         <div className='row'>
             <div className='col-4'> 
-        <input type="text" placeholder="Enter your task" className='form-control' onChange={nameChangeHandler}></input>
+        <input type="text" placeholder="Enter your task" className='form-control' onChange={nameChangeHandler} value={name}></input>
         </div>
         <div className='col-4'> 
-        <input type="date"  className='form-control' onChange={dateChangeHandler}/>
+        <input type="date"  className='form-control' onChange={dateChangeHandler} value={date}/>
         </div>
 
         <div className='col-4'> 
