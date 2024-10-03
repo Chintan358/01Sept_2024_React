@@ -4,6 +4,7 @@ import Details from "./components/Details"
 import React, { useState } from 'react'
 import Counter from "./components/Counter"
 import Input  from "./components/Input"
+import Demo from "./components/Demo"
 function App()
 {
 
@@ -28,6 +29,7 @@ function App()
             <List studentdata={stdata}></List>
             <Details></Details>
             <Counter></Counter>
+            <Demo ></Demo>
           </>
         
   

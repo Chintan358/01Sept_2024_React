@@ -1,10 +1,11 @@
+import { MdDelete } from "react-icons/md";
 
-const Tabledata = ({name,email,phone})=>{
+const Tabledata = ({name,email,phone,deleteStudent})=>{
     return <> <tr>
     <td>{name}</td>
     <td>{email}</td>
     <td>{phone}</td>
-    <td><button className="btn btn-danger">Delete</button></td>
+    <td><button className="btn btn-danger" onClick={()=>deleteStudent(name)}><MdDelete /></button></td>
 </tr></>
 }
 

@@ -22,7 +22,8 @@ const App = ()=>{
       
     }
 
-    return <><Container>
+    return <>
+    <Container>
       <Title></Title>
       <InputItem InputHandler={InputHandler}></InputItem>
       <ErrorMessage items={items}></ErrorMessage>
