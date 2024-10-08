@@ -2,10 +2,11 @@ import { useState } from "react"
 import Addtodo from "./Components/Addtodo"
 import Title from "./Components/TiTle"
 import Todoitem from "./Components/Todoitem"
-
+import { TodoItemListContext } from "./store/todoItemContext"
+import Demo from "./Components/Demo"
 const App = ()=>{
 
-  // const todolist = [{name:"Assignment",date:"10/09/2024"},{name:"Project",date:"11/09/2024"},{name:"Project",date:"11/09/2024"}]
+  //  const todolist1 = [{name:"Assignment",date:"10/09/2024"},{name:"Project",date:"11/09/2024"},{name:"Project",date:"11/09/2024"}]
 
   let [todolist, settodolist] = useState([])
 
@@ -22,9 +23,12 @@ const App = ()=>{
   }
 
   return <center className="todo-container">
+    <TodoItemListContext.Provider value={todolist}>
     <Title></Title>
     <Addtodo onbuttonclick={addItemHandler}></Addtodo>
-    <Todoitem todoitemlist={todolist} onDeleteButtonClick={deleteItemHandler}></Todoitem>
+    <Todoitem  onDeleteButtonClick={deleteItemHandler}></Todoitem>
+    <Demo></Demo>
+    </TodoItemListContext.Provider>
   </center>
 }
 

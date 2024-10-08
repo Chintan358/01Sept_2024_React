@@ -24,8 +24,8 @@ const App = ()=>{
 
 
   const deleteStudent = (name)=>{
-    let newlist = studentList.filter(ele=>ele.name!=name)
-    setStudentList(newlist)
+    
+    setStudentList((stlist)=>{return stlist.filter(ele=>ele.name!=name)})
   }
 
   return <Container>
