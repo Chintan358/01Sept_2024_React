@@ -3,11 +3,13 @@ import { TodoItemListContext } from "../store/todoItemContext"
 import Item from "./Item"
 import style from "./Todoitem.module.css"
 
-const Todoitem = ({onDeleteButtonClick})=>{
+const Todoitem = ()=>{
 
-     const  todoitemlist =  useContext(TodoItemListContext)
+     const  {todolist} =  useContext(TodoItemListContext)
+   
+    
 
-    return <>{todoitemlist.map((item)=><Item key={item.name} todoname={item.name} tododate={item.date} onDeleteButtonClick={onDeleteButtonClick}></Item>)}</>
+    return <>{todolist.map((item)=><Item key={item.name} todoname={item.name} tododate={item.date} ></Item>)}</>
 }
 
 export default Todoitem
