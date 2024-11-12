@@ -1,6 +1,8 @@
 import { MdDelete } from "react-icons/md";
 const Posts = ({post})=>{
 
+    
+    
     return <div className="card card-container" style={{width: "30rem"}}>
       
     <div className="card-body">
@@ -9,9 +11,10 @@ const Posts = ({post})=>{
    
   </span>
       <h5 className="card-title">{post.title}</h5>
-      <p className="card-text">{post.content}</p>
-      <span class="badge text-bg-primary">Likes {post.likes}</span>
-      <span class="badge text-bg-success m-2">Comments {post.comments}</span>
+      <p className="card-text">{post.body}</p>
+      {post.tags.map(ele=><span className="badge text-bg-primary m-1">{ele}</span>)}
+      
+      
     </div>
   </div>
 }
