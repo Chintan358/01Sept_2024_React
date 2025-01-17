@@ -1,7 +1,8 @@
 import { useRef } from "react"
 import { Link } from "react-router-dom"
-import { auth } from '../firestore'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth, googleprovider } from '../firestore'
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import GoogleButton from 'react-google-button'
 
 const Login = () => {
 
@@ -19,6 +20,17 @@ const Login = () => {
 
         }
     }
+
+    const loginwithgoogle = async () => {
+
+        const result = await signInWithPopup(auth, googleprovider)
+
+
+
+
+    }
+
+
     return <>
         <div className="container">
             <h1 className="text-center text-primary py-3">User Login</h1>
@@ -32,6 +44,11 @@ const Login = () => {
                         <button className="btn btn-success mt-3">
                             Log In
                         </button>
+                        <br />
+                        <br />
+                        <GoogleButton
+                            onClick={loginwithgoogle}
+                        />
                         <Link to={"/reg"} className="mx-3">Don't Have Account</Link>
                     </div>
                 </form>

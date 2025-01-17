@@ -44,7 +44,7 @@ const Register = () => {
                         <button className="btn btn-success mt-3 ">
                             Submit
                         </button>
-                        <Link to={"/login"} className="mx-3">Log In</Link>
+                        <Link to={"/"} className="mx-3">Log In</Link>
                     </div>
                 </form>
             </div>

@@ -6,16 +6,24 @@ const Home = () => {
 
     const [profile, setProfile] = useState()
 
+
+
+
     const loadCurrentUser = async () => {
         await auth.onAuthStateChanged(async (user) => {
+
 
             if (user == null) {
                 window.location.href = "/"
             }
 
-            const result = await getDoc(doc(db, "users", user.uid))
-            setProfile(result.data())
-
+            if (user.displayName == null) {
+                const result = await getDoc(doc(db, "users", user.uid))
+                setProfile(result.data())
+            }
+            else {
+                setProfile({ uname: user.displayName, email: user.email })
+            }
         })
     }
 
